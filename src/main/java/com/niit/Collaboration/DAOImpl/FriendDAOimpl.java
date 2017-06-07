@@ -73,7 +73,7 @@ log.debug("array count"+list1.size());
 
 		return (Friend) query.uniqueResult();
 	}
-
+	@Transactional
 	public boolean save(Friend friend) {
 		try {
 			// log.debug("*********************Previous id " + getMaxId());
@@ -88,7 +88,7 @@ log.debug("array count"+list1.size());
 			return false;
 		}
 	}
-
+	@Transactional
 	public boolean update(Friend friend) {
 		try {
 			log.debug("Starting of the method update");
@@ -104,7 +104,7 @@ log.debug("array count"+list1.size());
 			return false;
 		}
 	}
-
+	@Transactional
 	public List<Friend> getNewFriendRequests(String userid) {
 		String hql = "select useridfrom Friend where friend_id=" + "'" + userid+ "' and status ='" + "R'";
 
@@ -139,7 +139,7 @@ log.debug("array count"+list1.size());
 		}
 
 	}
-
+	@Transactional
 	public boolean setOffLine(String userid) {
 		try {
 			log.debug("Starting of the metnod setOffLine");
@@ -156,12 +156,12 @@ log.debug("array count"+list1.size());
 		}
 
 	}
-
+	@Transactional
 	public List<Friend> getRequestsSendByMe(String userid) {
 		String hql = "select friend_id from Friend where user_id=" + "'" + userid+ "' and status ='" + "R'";
 
 		log.debug(hql);
-		return  sessionFactory.openSession().createQuery(hql).list();
+		return  sessionFactory.openSession().createQuery("From Friend").list();
 	}
 
 

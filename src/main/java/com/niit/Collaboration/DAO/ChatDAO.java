@@ -17,4 +17,5 @@ public boolean save(Chat chat);
 	public boolean delete(String id);
 
 	public Chat get(String string);
+	public List<Chat> getChatByFriend(String user_id,String friend_id);
 }

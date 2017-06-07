@@ -68,14 +68,14 @@ public class UserTestCase {
 @Test
 public void createUserTestCase(){
 	
-	user.setId("Gaurav");
-	user.setName("gaurav");
-	user.setAddress("Regal kasturi");
-	user.setPassword("sourabh");
-	user.setRole("ROLE_ADMIN");
+	user.setId("SAI");
+	user.setName("SAI");
+	user.setAddress("BHOPAL");
+	user.setPassword("SAI");
+	user.setRole("ADMIN");
 	user.setMobile("7389616986");
-	user.setIsOnline('Y');
-	user.setEmail("gaurav.shrivastav@gmail");
+	
+	user.setEmail("SAI.shrivastav@gmail");
     user.setLastSeenTime(new Date());
     user.setStatus('Y');
    
@@ -87,7 +87,7 @@ public void createUserTestCase(){
 	assertEquals("createUserTestCase",true,flag);
 }
 	
-	/*
+	
 	@Test
 	public void getUserTestCase()
 	{
@@ -133,9 +133,9 @@ public void UpdateTestCase(){
 	assertEquals("UpdateTestCase",true,flag);
 	
 	
-}*/
+}
 
-/*@Test
+@Test
 public void AuthenticateTestcase()
 {
 
@@ -166,7 +166,7 @@ public void getUserTestcase(){
 
 	
 	
-	*/
+	
 	
 	
 	

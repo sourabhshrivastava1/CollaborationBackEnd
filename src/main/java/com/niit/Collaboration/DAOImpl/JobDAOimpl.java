@@ -12,14 +12,15 @@ import org.springframework.stereotype.Repository;
 
 import com.niit.Collaboration.DAO.JobDAO;
 import com.niit.Collaboration.model.Job;
+import com.niit.Collaboration.model.User;
 
 
 
 @Transactional
-@Repository("JobDAO")
-public class JobDAOimpl {
+@Repository("jobDAO")
+public class JobDAOimpl implements JobDAO {
 
-	  private static Logger log = LoggerFactory.getLogger(JobDAO.class);
+	  private static final Logger log = LoggerFactory.getLogger(JobDAO.class);
 private  SessionFactory  sessionFactory;
 	
 	
@@ -72,7 +73,7 @@ private  SessionFactory  sessionFactory;
 		}
 	
 	}
-	@Transactional
+/*	@Transactional
 	public boolean update(Job job) {
 	try {
 		sessionFactory.getCurrentSession().update(job);
@@ -81,8 +82,8 @@ private  SessionFactory  sessionFactory;
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 		return false;
-	}
-	}
+	}*/
+	
 	@Transactional
 	public boolean delete(String id)
 	{
@@ -102,4 +103,45 @@ private  SessionFactory  sessionFactory;
 		log.debug("Ending of the method delete");
 		return true;
 	}
+	
+	
+	@Transactional
+	public boolean saveOrupdate(Job job) {
+		
+		log.debug("Starting of the Save Method");
+		
+			try {
+				sessionFactory.getCurrentSession().saveOrUpdate(job);
+			
+				return true;
+			} catch (HibernateException e) {
+				e.printStackTrace();
+				log.debug("Ending of the Save Method");
+				return false;
+			}
+		}
+
+
+
+
+	public boolean updatejob(Job job) {
+		try {
+			sessionFactory.getCurrentSession().update(job);
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+
+
+
+	public Job getJobById(String id) {
+ Job job = (Job) sessionFactory.getCurrentSession().get(Job.class, id);
+		 
+		 return job;
+	}
+	
 }

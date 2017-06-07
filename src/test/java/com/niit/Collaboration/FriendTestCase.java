@@ -53,11 +53,11 @@ public class FriendTestCase {
 	@Test
 	public void createFriendTestCase()
 	{
-		friend.setId(3);
-		friend.setFriendID("sourabh");
+		friend.setId(5);
+		friend.setFriendID("Gaurav");
 		friend.setIsOnline("Y");
 		friend.setStatus("Y");
-		friend.setUserid("002");
+		friend.setUserid("Aashi");
 		
 	       boolean flag =	friendDAO.save(friend);
 	       

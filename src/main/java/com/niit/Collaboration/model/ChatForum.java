@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "c_chat_forum")
+@Table(name = "C_Chat_Forum")
 @Component
 public class ChatForum extends BaseDomain{
 	
@@ -66,6 +66,11 @@ public class ChatForum extends BaseDomain{
 
 	public void setForumName(String forumName) {
 		this.forumName = forumName;
+	}
+
+	public void setStatus(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

@@ -3,27 +3,25 @@ package com.niit.Collaboration;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
-import java.util.List;
 
-import org.hibernate.id.IdentityGenerator.GetGeneratedKeysDelegate;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.niit.Collaboration.DAO.ChatDAO;
-import com.niit.Collaboration.model.Chat;
 
-import junit.framework.Assert;
+import com.niit.Collaboration.DAO.ChatForumDAO;
 
-public class ChatTestCase {
+import com.niit.Collaboration.model.ChatForum;
+
+public class ChatForumTestCase {
 
 	
 	@Autowired  static AnnotationConfigApplicationContext context;
 	
-	@Autowired  static Chat chat;
+	@Autowired  static ChatForum chatforum;
 	
-	@Autowired  static ChatDAO  chatDAO;
+	@Autowired  static ChatForumDAO  chatforumDAO;
 	
 	
 	
@@ -34,9 +32,9 @@ public class ChatTestCase {
 		context.scan("com.niit");
 		context.refresh();
 		
-		chat = (Chat) context.getBean("chat");
+		chatforum = (ChatForum) context.getBean("chatforum");
 		
-		chatDAO = (ChatDAO) context.getBean("chatDAO");
+		 chatforumDAO = (ChatForumDAO) context.getBean("chatforumDAO");
 		 
 	}
 	
@@ -57,16 +55,17 @@ public class ChatTestCase {
 	
 	
 	@Test
-	public void createChatTestCase()
-	{chat.setId(001);
-	chat.setUserID("001");
-	chat.setFriendID("002");
-	chat.setDateTime(new Date(System.currentTimeMillis()));
-	chat.setMessage("hello ");
-	
-	       boolean flag =	chatDAO.save(chat);
+	public void createChatForumTestCase()
+	{
+    chatforum.setId("01");
+	chatforum.setUserID("001");
+	chatforum.setForumName("Niit");
+	chatforum.setCreatedDate(new Date());
+	chatforum.setMessage("hello");
+	      
+	boolean flag =	chatforumDAO.saveOrUpdate(chatforum);
 	       
-	       assertEquals("createChatTestCase ",true, flag);
+	       assertEquals("createChatForumTestCase ",true, flag);
 	}
 	
 	/*

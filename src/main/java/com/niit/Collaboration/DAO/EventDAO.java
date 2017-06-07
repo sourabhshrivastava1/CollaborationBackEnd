@@ -4,23 +4,12 @@ import java.util.List;
 
 import antlr.debug.Event;
 
-
-
 public interface EventDAO {
 
-	public Event getEventById(String id);
-	
-	public Event getEventByName(String name);
-	
-	public boolean saveOrupdate(Event event);
-	
-	public boolean deleteById(String id);
-	
-	/*public boolean deletebyEvent(Event event);
-	
-	public boolean deleteByName(String name);*/
-	
-	public List<Event> list();
-	
-	
+	public boolean save(Event event);
+	public boolean update(Event event);
+	public Event getEventById(String event_id);
+	public List<Event> listEvent();
+	public boolean saveOrupdate(com.niit.Collaboration.model.Event event);
 }
+

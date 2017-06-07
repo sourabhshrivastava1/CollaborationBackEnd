@@ -38,11 +38,11 @@ public class Blog extends BaseDomain {
 	public void setUserid(String userid) {
 		Userid = userid;
 	}
-	public String getDatetime() {
+	public Date getDatetime() {
 		return datetime;
 	}
-	public void setDatetime(String datetime) {
-		this.datetime = datetime;
+	public void setDatetime(Date date) {
+		this.datetime = date;
 	}
 	public char getStatus() {
 		return status;
@@ -56,39 +56,24 @@ public class Blog extends BaseDomain {
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
-	public Clob getDescription() {
-		return description;
-	}
-	public void setDescription(Clob description) {
-		this.description = description;
-	}
+	
+	
 	private String Title;
 	
 	@Column(name="User_id")
 	private String Userid;
 	@Column(name="date_time")
-	private String datetime;
+	private Date datetime;
 	private char status;
 	private String reason;
-	private Clob description;
-	public void setDescription(String string) {
-		// TODO Auto-generated method stub
-		
+	private String description;
+	public String getDescription() {
+		return description;
 	}
-	public void setErrorCode(String string) {
-		// TODO Auto-generated method stub
-		
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	public void setErrorMessage(String string) {
-		// TODO Auto-generated method stub
-		
+	
 	}
-	public void setDatetime(Date date) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setId(BigDecimal blogID) {
-		// TODO Auto-generated method stub
-		
-	}
-}
+	
+

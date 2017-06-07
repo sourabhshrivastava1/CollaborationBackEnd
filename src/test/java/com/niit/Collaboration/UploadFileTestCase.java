@@ -17,7 +17,7 @@ import com.niit.Collaboration.model.User;
 
 import junit.framework.Assert;
 
-public class BlogTestCase {
+public class UploadFileTestCase {
 
 	
 	@Autowired  static AnnotationConfigApplicationContext context;
@@ -59,12 +59,12 @@ public class BlogTestCase {
 	public void createBlogTestCase()
 	{
 		blog.setId(1);
-		blog.setUserid("Akshat");
-		blog.setTitle("ANgularJs");
+		blog.setUserid("Aashi");
+		blog.setTitle("FUN");
 		blog.setDatetime(new Date());
 	    blog.setStatus('Y');
-	    blog.setReason("this is for Tutorial");
-	    blog.setDescription("This tutorial is specially designed to help you learn AngularJS as quickly and efficiently as possible");
+	    blog.setReason("this is for status");
+	    blog.setDescription("Entertainment blog");
 		boolean flag =	blogDAO.saveOrupdate(blog);
 	       
 	       assertEquals("createBlogTestCase ",true, flag);

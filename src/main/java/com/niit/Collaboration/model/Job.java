@@ -1,27 +1,27 @@
 package com.niit.Collaboration.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import com.niit.Collaboration.model.BaseDomain;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "c_job")
+@Table(name = "C_JOB")
 @Component
-public class Job extends BaseDomain{
+public class Job extends BaseDomain {
 
 	@Id
-	private long id;
+	private String id;
 	
 	private String title;
 	
 	private String qualification;
 	
-	private char status;
+	private String status;
 	
 	private String description;
 	
@@ -30,11 +30,11 @@ public class Job extends BaseDomain{
 	
 	private Date dateTime;
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -54,11 +54,11 @@ public class Job extends BaseDomain{
 		this.qualification = qualification;
 	}
 
-	public char getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(char status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
@@ -70,15 +70,13 @@ public class Job extends BaseDomain{
 		this.description = description;
 	}
 
+	
+
 	public Date getDateTime() {
 		return dateTime;
 	}
 
-	public void setDateTime(Date dateTime) {
-		this.dateTime = dateTime;
-	}
-
-	public void setDateTime(java.util.Date date) {
+	public void setDateTime(Date date) {
 		// TODO Auto-generated method stub
 		
 	}

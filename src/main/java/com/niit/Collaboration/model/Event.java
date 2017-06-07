@@ -1,42 +1,38 @@
 package com.niit.Collaboration.model;
 
-import java.util.Date;
+import java.sql.Blob;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
-
+import com.niit.Collaboration.model.BaseDomain;
 import org.springframework.stereotype.Component;
 
-import oracle.sql.BLOB;
-
 @Component
+@Table(name="C_EVENTS")
 @Entity
-@Table(name="C_EVENT")
-public class Event extends  BaseDomain{
-	
+public class Event extends BaseDomain{
+
 	@Id
-	private String id;
+	private int id;
 	
-	@Column
+	@Column(name = "NAME")
 	private String name;
 	
+	@Column(name = "VENUE")
 	private String venue;
 	
-	@Column(name="description")
-	private String Description;
+	@Column(name = "DESCRIPTION")
+	private String description;
 	
-	@Column(name="date_time")
-	private Date DateTime;
-	
-	private BLOB image;
-
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -57,27 +53,56 @@ public class Event extends  BaseDomain{
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 
-	public Date getDateTime() {
-		return DateTime;
+	public Date getEvent_date() {
+		return event_date;
 	}
 
-	public void setDateTime(Date date) {
-		DateTime = date;
+	public void setEvent_date(Date event_date) {
+		this.event_date = event_date;
 	}
 
-	public BLOB getImage() {
-		return image;
+	public String getFile_name() {
+		return file_name;
 	}
 
-	public void setImage(BLOB image) {
-		this.image = image;
+	public void setFile_name(String file_name) {
+		this.file_name = file_name;
 	}
 
+	public Blob getData() {
+		return data;
+	}
+
+	public void setData(Blob data) {
+		this.data = data;
+	}
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	@Column(name = "EVENT_DATE")
+	private Date event_date;
+	
+	@Column(name = "FILE_NAME")
+	private String file_name;
+	
+	  									//to store some image files, Large Object
+	@Column(name = "FILE_DATA")
+	private Blob data;
+	
+	@Column(name = "USER_ID")
+	private String user_id;
+	
 }

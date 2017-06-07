@@ -31,8 +31,7 @@ public class User extends BaseDomain{
 	
 	private  String password;
 	
-	@Column(name="is_online")
-	private char  isOnline;
+	
 	
 	private String dob;
 	
@@ -74,12 +73,7 @@ public class User extends BaseDomain{
 	public void setReason(String reason) {
 		this.reason = reason;*/
 	
-	public char getIsOnline() {
-		return isOnline;
-	}
-	public void setIsOnline(char isOnline) {
-		this.isOnline = isOnline;
-	}
+	
 	public String getRole() {
 		return role;
 	}

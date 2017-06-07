@@ -2,6 +2,7 @@ package com.niit.Collaboration;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -41,33 +42,24 @@ public class JobTestCase {
 	
 	//@Test
 	
-	/*public void validateCredentialsTestCase()
-	{
-		
-	boolean flag =	  jobDAO.isValidCredentials("manish", "manish");
+
 	
-	Assert.assertEquals("validateCredentialsTestCase", true , flag);;
-	;;;;;;;;
-	;;;;;;;;;
-		
-	}
-	*/
-	
-	//@Test
+	@Test
 	public void createJobTestCase()
-	{job.setId(0);
-	job.setTitle("manish");
-	job.setQualification(null);
-	job.setDateTime(null);
-	job.setDescription(null);
-	job.setStatus((Character) null);
+	{
+	job.setId("1");
+	job.setTitle("Software vacancy");
+	job.setQualification("b.e/b.tech");
+	job.setDateTime(new Date());
+	job.setDescription("SKills in Software developement");
+	job.setStatus("vacant");
 	
 	       boolean flag =	jobDAO.save(job);
 	       
 	       assertEquals("createJobTestCase ",true, flag);
 	}
 	
-	
+	/*
 	//@Test
 	public void updateJobTestCase()
 	{
@@ -108,7 +100,7 @@ public class JobTestCase {
 	
 	
 	
-	
+	*/
 	
 	
 	

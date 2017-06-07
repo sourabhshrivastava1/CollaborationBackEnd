@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name = "C_CHAT")
 @Component
-public class Chat {
+public class Chat extends BaseDomain {
 
 	@Id
 	private int id;

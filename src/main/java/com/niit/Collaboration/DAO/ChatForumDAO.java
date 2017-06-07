@@ -13,6 +13,8 @@ public interface ChatForumDAO {
 	public boolean update(ChatForum chatForum) ;
 	public boolean delete(String userID,BigDecimal commentID);
 	public boolean save(ChatForum chatForum);
-
-	
+	public ChatForum getchatforum(ChatForum chatforum);
+	public boolean delete(ChatForum chatforum);
+	public ChatForum get(String id);
+	public boolean saveOrUpdate(ChatForum chatforum);
 }

@@ -10,16 +10,16 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "c_job")
+@Table(name = "C_JOB_APPLICATION")
 @Component
 public class JobApplication extends BaseDomain{
 
 
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getUserID() {
@@ -28,11 +28,11 @@ public class JobApplication extends BaseDomain{
 	public void setUserID(String userID) {
 		this.userID = userID;
 	}
-	public Long getJobID() {
+	public String getJobID() {
 		return jobID;
 	}
-	public void setJobID(Long jobID) {
-		this.jobID = jobID;
+	public void setJobID(String string) {
+		this.jobID = string;
 	}
 	public Date getDateApplied() {
 		return dateApplied;
@@ -53,15 +53,19 @@ public class JobApplication extends BaseDomain{
 		this.status = status;
 	}
 	@Id
-	private Long id;
+	private Integer id;
 	@Column(name="user_id")
 	private String userID;
 	
 	@Column(name="job_id")
-	private Long jobID;
+	private String jobID;
 	
 	@Column(name="date_applied")
 	private Date dateApplied;
 	private String remarks;
 	private char status;//S->Select; R->Reject; C->Call For Inerview
+	public void setDate_time(Date today) {
+		// TODO Auto-generated method stub
+		
+	}
 	}

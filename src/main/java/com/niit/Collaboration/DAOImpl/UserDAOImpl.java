@@ -40,15 +40,17 @@ public class UserDAOImpl implements UserDAO{
 			}
 		}
 
+/*
+		public List<User> list() {
+			 return sessionFactory.getCurrentSession().createQuery("from User").list();
+
+		}*/
+		
 		@Transactional
 		public List<User> list() {
-			log.debug("->->Starting of the method list");
-			@SuppressWarnings("unchecked")
-			List<User> list = (List<User>) sessionFactory.getCurrentSession()
-					.createCriteria(User.class)
-					.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-
-			return list;
+			String hql = "from User";
+			Query query = sessionFactory.getCurrentSession().createQuery(hql);
+			return query.list();
 		}
 
 		@Transactional
@@ -114,13 +116,11 @@ public class UserDAOImpl implements UserDAO{
 		   return getUser(hql);
 		}
 		
-		@Transactional
+	
 		public User get(String id) {
-			log.debug("->->Starting of the method get");
-			log.debug("->->id : " + id);
-			String hql = "from User where id=" + "'"+ id + "'" ;
-			 return getUser(hql);
-			
+			 User user = (User) sessionFactory.getCurrentSession().get(User.class, id);
+			 
+			 return user;
 		}
 		
 		private User getUser(String hql)

@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.Collaboration.DAO.ChatForumDAO;
 import com.niit.Collaboration.model.ChatForum;
-
-@Repository
+@Transactional
+@Repository("chatforumDAO")
 public class ChatForumDAOimpl implements ChatForumDAO{
 
 	@Autowired
@@ -76,4 +76,50 @@ public class ChatForumDAOimpl implements ChatForumDAO{
 			return false;
 		}
 	}
+
+	public ChatForum getchatforum(ChatForum chatforum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Transactional
+	public boolean delete(ChatForum chatforum) {
+		try {
+			sessionFactory.getCurrentSession().delete(chatforum);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	@Transactional
+	public ChatForum get(String id) {
+		String hql = "from Forum where id='"+ id+"'" ;
+		@SuppressWarnings("rawtypes")
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<ChatForum>list= query.list();
+		
+		if(list==null)
+		{
+			return null;
+		}
+		else
+		{
+			return list.get(0);
+		}
+	}
+	
+    @Transactional 
+    public boolean saveOrUpdate(ChatForum chatforum) {
+	 try {
+		   sessionFactory.getCurrentSession().saveOrUpdate(chatforum);
+		   return true;
+	} catch (Exception e) {
+		e.printStackTrace();
+		return false;
+	}
 }
+
+}
+
