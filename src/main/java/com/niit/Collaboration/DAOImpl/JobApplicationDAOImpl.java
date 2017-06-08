@@ -23,13 +23,13 @@ public class JobApplicationDAOImpl implements JobApplicationDAO{
 		return sessionFactory.getCurrentSession().createQuery("from JobApplication").list(); 
 	}
 
-	public List<JobApplication> getList(String userid) {
-		return sessionFactory.getCurrentSession().createQuery("from JobApplication where userid='"+userid+"'  ").list();
+	public List<JobApplication> getList(String user_id) {
+		return sessionFactory.getCurrentSession().createQuery("from JobApplication where user_id='"+user_id+"'  ").list();
 	}
 
 	public boolean save(JobApplication jobApplication) {
 		try {
-			jobApplication.setId(getMaxId() + 1);
+			//jobApplication.setId(getMaxId() + 1);
 			sessionFactory.getCurrentSession().save(jobApplication);
 			return true;
 		} catch (Exception e) {

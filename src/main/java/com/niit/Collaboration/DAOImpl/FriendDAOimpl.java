@@ -47,12 +47,12 @@ public class FriendDAOimpl implements FriendDAO {
 
 	}
 
-	public List<Friend> listMyFriend(String userid) {
-		String hql1 = "select friend_id  from Friend where user_id='" + userid+ "' and status = 'Y' ";
+	public List<Friend> listMyFriend(String user_id) {
+		String hql1 = "select friend_id  from Friend where user_id='" + user_id+ "' and status = 'Y' ";
 
 		/* + " union  " + */
 
-		String hql2 = "select useridfrom Friend where friend_id='" + userid+ "' and status = 'Y'";
+		String hql2 = "select user_id from Friend where friend_id='" + user_id+ "' and status = 'Y'";
 
 		log.debug("getMyFriends hql1 : " + hql1);
 		log.debug("getMyFriends hql2 : " + hql2);
@@ -65,8 +65,8 @@ log.debug("array count"+list1.size());
 		return list1;
 	}
 
-	public Friend get(String friendID,String userid) {
-		String hql = "from Friend where user_id=" + "'" + userid+ "' and friendID= '" + friendID + "' and status= 'R' ";
+	public Friend get(String friend_id,String user_id) {
+		String hql = "from Friend where user_id=" + "'" + user_id+ "' and friend_id= '" + friend_id + "' and status= 'R' ";
 
 		log.debug("hql: " + hql);
 		Query query = sessionFactory.openSession().createQuery(hql);
@@ -92,8 +92,8 @@ log.debug("array count"+list1.size());
 	public boolean update(Friend friend) {
 		try {
 			log.debug("Starting of the method update");
-			log.debug("user ID : " + friend.getUserid() + " Friend id :" + friend.getFriendID());
-			log.debug("user ID : " + friend.getUserid() + " Friend id :" + friend.getFriendID());
+			log.debug("user ID : " + friend.getUser_id() + " Friend id :" + friend.getFriend_id());
+			log.debug("user ID : " + friend.getUser_id() + " Friend id :" + friend.getFriend_id());
 			sessionFactory.getCurrentSession().update(friend);
 			log.debug("Successfully updated");
 			return true;
@@ -105,8 +105,8 @@ log.debug("array count"+list1.size());
 		}
 	}
 	@Transactional
-	public List<Friend> getNewFriendRequests(String userid) {
-		String hql = "select useridfrom Friend where friend_id=" + "'" + userid+ "' and status ='" + "R'";
+	public List<Friend> getNewFriendRequests(String user_id) {
+		String hql = "select user_id from Friend where friend_id=" + "'" + user_id+ "' and status ='" + "R'";
 
 		log.debug(hql);
 		 return  sessionFactory.openSession().createQuery(hql).list();
@@ -166,9 +166,9 @@ log.debug("array count"+list1.size());
 
 
 	@Transactional
-	public List<Friend> getMyFriends(String userID) {
-		String hql1="select f from Friend f where f.userID='"+userID+"'and f.status='A'";
-		String hql2="select f from Friend f where f.friendID='"+userID+"'and f.status='A'";
+	public List<Friend> getMyFriends(String user_id) {
+		String hql1="select f from Friend f where f.userID='"+user_id+"'and f.status='A'";
+		String hql2="select f from Friend f where f.friendID='"+user_id+"'and f.status='A'";
 		Query query1=sessionFactory.openSession().createQuery(hql1);
 		Query query2=sessionFactory.openSession().createQuery(hql2);
 		List<Friend> list1=(List<Friend>)query1.list();

@@ -40,19 +40,19 @@ public class UserDAOImpl implements UserDAO{
 			}
 		}
 
-/*
+		@Transactional
 		public List<User> list() {
 			 return sessionFactory.getCurrentSession().createQuery("from User").list();
 
-		}*/
+		}
 		
-		@Transactional
+	/*	@Transactional
 		public List<User> list() {
 			String hql = "from User";
 			Query query = sessionFactory.getCurrentSession().createQuery(hql);
 			return query.list();
 		}
-
+*/
 		@Transactional
 		public boolean update(User user) {
 			log.debug("->->Starting of the method update");

@@ -28,7 +28,7 @@ public class Job extends BaseDomain {
 
 	@Column(name="date_time")
 	
-	private Date dateTime;
+	private Date date_time;
 
 	public String getId() {
 		return id;
@@ -70,14 +70,22 @@ public class Job extends BaseDomain {
 		this.description = description;
 	}
 
-	
-
-	public Date getDateTime() {
-		return dateTime;
+	public Date getDate_time() {
+		return date_time;
 	}
 
-	public void setDateTime(Date date) {
+	public void setDate_time(Date date_time) {
+		this.date_time = date_time;
+	}
+
+	
+/*
+	public Date getDateTime() {
+		return date_time;
+	}*/
+
+	/*public void setDateTime(Date date) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 }

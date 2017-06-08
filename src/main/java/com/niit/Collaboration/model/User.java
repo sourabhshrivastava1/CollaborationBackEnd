@@ -33,23 +33,23 @@ public class User extends BaseDomain{
 	
 	
 	
-	private String dob;
+	/*private String dob;
 	
 	public String getDob() {
 		return dob;
 	}
 	public void setDob(String string) {
 		this.dob = string;
-	}
+	}*/
 
-	private char status;
+	/*private char status;
 	
-/*	private String reason;*/
+	private String reason;
 	
 	@Column(name = "LAST_SEEN_TIME")
 	private Date lastSeenTime;
 
-	/*public String ErrorCode;*/
+	public String ErrorCode;
 	
 	
 	
@@ -66,7 +66,7 @@ public class User extends BaseDomain{
 	}
 	public void setStatus(char status) {
 		this.status = status;
-	}
+	}*/
 	/*public String getReason() {
 		return reason;
 	}

@@ -92,13 +92,13 @@ public class ChatDAOimpl implements ChatDAO{
 	}
 
 	
-	public List<Chat> getChatByFriend(String user_id,String friend_id) {
+	public List<Chat> getChatByFriend(String userID,String friend_id) {
 		
-		String hql1 = "select user_id,friend_id,date_time,message from Chat where user_id='" + user_id + "' and friend_id = '"+friend_id+"'  ";
+		String hql1 = "select userid,friend_id,date_time,message from Chat where user_id='" + userID + "' and friend_id = '"+friend_id+"'  ";
 
 		/* + " union  " + */
 
-		String hql2 = "select user_id,friend_id,date_time,message from Chat where user_id='" + friend_id + "' and friend_id = '"+user_id+"'  ";
+		String hql2 = "select userid,friend_id,date_time,message from Chat where user_id='" + friend_id + "' and friend_id = '"+userID+"'  ";
 		
 		List<Chat> list1 = sessionFactory.openSession().createQuery(hql1).list();
 		List<Chat> list2 = sessionFactory.openSession().createQuery(hql2).list();

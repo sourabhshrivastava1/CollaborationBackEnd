@@ -22,11 +22,11 @@ public class JobApplication extends BaseDomain{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getUserID() {
-		return userID;
+	public String getUser_id() {
+		return user_id;
 	}
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 	public String getJobID() {
 		return jobID;
@@ -54,8 +54,8 @@ public class JobApplication extends BaseDomain{
 	}
 	@Id
 	private Integer id;
-	@Column(name="user_id")
-	private String userID;
+	@Column(name="USER_ID")
+	private String user_id;
 	
 	@Column(name="job_id")
 	private String jobID;
@@ -65,7 +65,7 @@ public class JobApplication extends BaseDomain{
 	private String remarks;
 	private char status;//S->Select; R->Reject; C->Call For Inerview
 	public void setDate_time(Date today) {
-		// TODO Auto-generated method stub
+	   this.setDate_time(today);
 		
 	}
 	}

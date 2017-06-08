@@ -33,7 +33,7 @@ public class FriendTestCase {
 		friend = (Friend) context.getBean("friend");
 		
 		friendDAO = (FriendDAO) context.getBean("friendDAO");
-		 
+		//http://localhost:8089/CollaborationFrontEnd/
 	}
 	
 	//@Test
@@ -53,11 +53,11 @@ public class FriendTestCase {
 	@Test
 	public void createFriendTestCase()
 	{
-		friend.setId(5);
-		friend.setFriendID("Gaurav");
-		friend.setIsOnline("Y");
-		friend.setStatus("Y");
-		friend.setUserid("Aashi");
+		friend.setId(1);
+		friend.setFriend_id("chinmay");
+	
+		friend.setStatus('Y');
+		friend.setUser_id("SAI");
 		
 	       boolean flag =	friendDAO.save(friend);
 	       

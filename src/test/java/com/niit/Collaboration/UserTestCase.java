@@ -76,8 +76,8 @@ public void createUserTestCase(){
 	user.setMobile("7389616986");
 	
 	user.setEmail("SAI.shrivastav@gmail");
-    user.setLastSeenTime(new Date());
-    user.setStatus('Y');
+   // user.setLastSeenTime(new Date());
+    //user.setStatus('Y');
    
 
 	boolean flag = userDAO.saveOrupdate(user);

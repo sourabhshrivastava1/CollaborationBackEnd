@@ -38,7 +38,7 @@ public class JobApplictionTestCase {
 		
 
 		jobApplication.setJobID("1");
-		jobApplication.setUserID("Aashi");
+		jobApplication.setUser_id("Aashi");
 		jobApplication.setStatus('A');
 		jobApplication.setDate_time(today);
 		boolean flag = jobApplicationDAO.save(jobApplication);

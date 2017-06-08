@@ -50,7 +50,7 @@ public class JobTestCase {
 	job.setId("1");
 	job.setTitle("Software vacancy");
 	job.setQualification("b.e/b.tech");
-	job.setDateTime(new Date());
+	job.setDate_time(new Date());
 	job.setDescription("SKills in Software developement");
 	job.setStatus("vacant");
 	

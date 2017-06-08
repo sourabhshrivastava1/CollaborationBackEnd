@@ -23,6 +23,8 @@ import com.niit.Collaboration.model.Comment;
 import com.niit.Collaboration.model.Event;
 import com.niit.Collaboration.model.Friend;
 import com.niit.Collaboration.model.Job;
+import com.niit.Collaboration.model.JobApplication;
+import com.niit.Collaboration.model.UploadFile;
 import com.niit.Collaboration.model.User;
 
 @Configuration
@@ -71,6 +73,8 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(ChatForum.class);
 		sessionBuilder.addAnnotatedClass(Comment.class);
 		sessionBuilder.addAnnotatedClass(Event.class);
+		sessionBuilder.addAnnotatedClass(JobApplication.class);
+		sessionBuilder.addAnnotatedClass(UploadFile.class);
 		
 
 		// sessionBuilder.addAnnotatedClass(User.class);

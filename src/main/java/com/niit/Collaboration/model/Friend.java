@@ -15,13 +15,13 @@ public class Friend extends BaseDomain{
 	@Id
 	private int id;
 	
-	@Column(name="user_id")
-	private String userid;
+	@Column(name="USER_ID")
+	private String user_id;
 	
-	 @Column(name="friend_id")
-	private String friendID;
+	 @Column(name="FRIEND_ID")
+	private String friend_id;
 	
-	private String status;
+	private char status;
 	
 	@Column(name="is_online")
 	private char isOnline;
@@ -35,28 +35,44 @@ public class Friend extends BaseDomain{
 		this.id = id;
 	}
 
-	public String getUserid() {
-		return userid;
+	/*public String getUser_id() {
+		return user_id;
 	}
 
 	public void setUserid(String userID) {
-		this.userid= userID;
-	}
+		this.user_id= userID;
+	}*/
 
-	public String getFriendID() {
-		return friendID;
+	/*public String getFriendID() {
+		return friend_id;
 	}
 
 	public void setFriendID(String friendID) {
-		this.friendID= friendID;
-	}
+		this.friend_id= friendID;
+	}*/
 
-	public String getStatus() {
+	public char getStatus() {
 		return status;
 	}
 
-	public void setStatus(String string) {
-		this.status = string;
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	public String getFriend_id() {
+		return friend_id;
+	}
+
+	public void setFriend_id(String friend_id) {
+		this.friend_id = friend_id;
+	}
+
+	public void setStatus(char status) {
+		this.status = status;
 	}
 
 	public char getIsOnline() {
@@ -72,10 +88,9 @@ public class Friend extends BaseDomain{
 		
 	}
 
-	public void setStatus(char c) {
-		// TODO Auto-generated method stub
+
 		
-	}
+
 	
 	
 }
